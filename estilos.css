@@ -1,0 +1,253 @@
+#loading-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+#logo {
+  width: 300px; /* Ajusta al tamaño de tu logo */
+  z-index: 2; /* Asegura que el logo esté sobre el círculo */
+}
+
+#expanding-circle {
+  position: absolute;
+  right: -50px; /* Comienza fuera de la pantalla a la derecha */
+  top: 50%; /* Centrado verticalmente */
+  left: 50%;
+  transform: translateY(-50%);
+  width: 80px; /* Tamaño inicial */
+  height: 80px;
+  background-color: black;
+  border-radius: 50%;
+  animation: expandCircle 3s forwards; /* Ajustar tiempo según necesidad */
+}
+
+@keyframes expandCircle {
+  0% {
+      width: 100px;
+      height: 100px;
+      right: -50px;
+  }
+  50% {
+      width: 300px;
+      height: 300px;
+      right: 50%; /* Mover hacia el centro */
+      transform: translate(-50%, -50%);
+  }
+  100% {
+      width: 600px;
+      height: 600px;
+      right: 50%;
+      transform: translate(-50%, -50%);
+  }
+}
+/* ESTE ES EL CODIGO DE LA PRIMERA SECCION*/
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: black; /* Color inicial más claro, cambia según tu diseño */
+  display: block;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 2s ease; /* Transición para el color de fondo */
+  
+}
+.content{
+  width: 900px;
+  margin-top: 100px;
+
+  display: block;
+
+}
+.logo-image{
+  position: relative;
+}
+.rectangle {
+  position: relative;
+  width:100%;
+  height: 600px;
+  background-color: black;
+  overflow: hidden;
+  display: grid; 
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+  
+}
+
+.text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s, transform 3s;
+  font-size: 34px;
+  color: white;
+}
+#indice{
+  z-index:3;
+}
+/* Posiciones iniciales específicas y ajustes verticales */
+.text1 {
+  top: 20%; /* Cambia el porcentaje para ajustar la posición vertical */
+  transform: translateX(-100%);
+}
+.text1.active-text {
+  transform: translateX(-21%); /* Asegúrate de que esto es lo que quieres cuando la clase está activa */
+}
+
+.text2 {
+  top: 26%; /* Cambia el porcentaje para ajustar la posición vertical */
+  transform: translateX(-100%);
+}
+.text2.active-text {
+  transform: translateX(-17%); /* Asegúrate de que esto es lo que quieres cuando la clase está activa */
+}
+.text9 {
+  top: 32%; /* Cambia el porcentaje para ajustar la posición vertical */
+  transform: translateX(-100%);
+}
+.text9.active-text {
+  transform: translateX(-23%); /* Asegúrate de que esto es lo que quieres cuando la clase está activa */
+}
+
+.text5 {
+  top: 20%; /* Cambia el porcentaje para ajustar la posición vertical */
+  transform: translateX(-100%);
+}
+.text5.active-text {
+  transform: translateX(23%); /* Asegúrate de que esto es lo que quieres cuando la clase está activa */
+}
+.text6 {
+  top: 26%; /* Cambia el porcentaje para ajustar la posición vertical */
+  transform: translateX(-100%);
+}
+.text6.active-text {
+  transform: translateX(28%); /* Asegúrate de que esto es lo que quieres cuando la clase está activa */
+}
+.text7 {
+  top: 32%; /* Cambia el porcentaje para ajustar la posición vertical */
+  transform: translateX(-100%);
+}
+.text7.active-text {
+  transform: translateX(26.5%); /* Asegúrate de que esto es lo que quieres cuando la clase está activa */
+}
+.text3 {
+  top: 60%; /* Cambia el porcentaje para ajustar la posición vertical */
+  transform: translateX(-100%);
+}
+.text3.active-text {
+  transform: translateX(-16.5%); /* Asegúrate de que esto es lo que quieres cuando la clase está activa */
+}
+.text4 {
+  top: 68%; /* Cambia el porcentaje para ajustar la posición vertical */
+  transform: translateX(-100%);
+}
+.text4.active-text {
+  transform: translateX(-14.5%); /* Asegúrate de que esto es lo que quieres cuando la clase está activa */
+}
+.text8 {
+  top: 67.5%; /* Cambia el porcentaje para ajustar la posición vertical */
+  transform: translateX(-100%);
+}
+.text8.active-text {
+  transform: translateX(21%); /* Asegúrate de que esto es lo que quieres cuando la clase está activa */
+}
+/* Cuando se activan */
+.active-text {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Estilos para outlined-text */
+.outlined-text {
+  font-size: 44px;
+  color: transparent;
+  -webkit-text-stroke: 2px #FFF;
+}
+/* Estilos para outlined-text */
+.outlined-text2 {
+  font-size: 54px;
+  color: transparent;
+  -webkit-text-stroke: 2px #FFF;
+}
+
+.outlined-text3 {
+  font-size: 54px;
+  color: white;
+  -webkit-text-stroke: 2px #FFF;
+}
+
+.logo, .lamp-image {
+  width: 150px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lamp-image {
+  margin-top:50px;
+  width: 600px; /* Ajusta según necesidad */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+#logo {
+  width: 300px; /* Tamaño inicial */
+  z-index: 2; /* Asegura que el logo esté sobre el círculo */
+  position: absolute; /* Posición absoluta para control preciso */
+  top: 50%; /* Inicio en el centro vertical */
+  left: 50%; /* Centro horizontal */
+  transform: translate(-50%, -50%); /* Centrar exactamente en el medio */
+  transition: width 2s ease, top 2s ease, transform 2s ease; /* Suavizar transiciones de tamaño y posición */
+}
+.logo_placeholder{
+  width: 300px; /* Tamaño inicial */
+  z-index: 2; /* Asegura que el logo esté sobre el círculo */
+  position: relative; /* Posición absoluta para control preciso */
+  top: 50%; /* Inicio en el centro vertical */
+  left: 50%; /* Centro horizontal */
+  transform: translate(-50%, -50%); /* Centrar exactamente en el medio */
+  transition: width 2s ease, top 2s ease, transform 2s ease; /* Suavizar transiciones de tamaño y posición */
+}
+.texto{
+  width: 100%;
+}
+.additional-section {
+  width: 100%;
+  background-color: black;
+  background: linear-gradient(to bottom, black 40%, white 100%);
+  height: 700px;
+
+}
+.from-left {
+  transform: translateX(-100%); /* Mueve desde la izquierda */
+}
+
+.from-right {
+  transform: translateX(100%); /* Mueve desde la derecha */
+}
+#interactiveSection{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, black, white);
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+  scroll-snap-align: start;
+}
