@@ -11,8 +11,10 @@
 }
 
 #logo {
-  width: 300px; /* Ajusta al tamaño de tu logo */
+  width: 250px; /* Ajusta al tamaño de tu logo */
   z-index: 2; /* Asegura que el logo esté sobre el círculo */
+  transition: transform 2s ease, opacity 2s ease; 
+  position: relative;
 }
 
 #expanding-circle {
@@ -69,9 +71,7 @@ body, html {
   display: block;
 
 }
-.logo-image{
-  position: relative;
-}
+
 .rectangle {
   position: relative;
   width:100%;
@@ -189,12 +189,7 @@ body, html {
   -webkit-text-stroke: 2px #FFF;
 }
 
-.logo, .lamp-image {
-  width: 150px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
+
 
 .lamp-image {
   margin-top:50px;
@@ -203,24 +198,8 @@ body, html {
   transform: translate(-50%, -50%);
   z-index: 1;
 }
-#logo {
-  width: 300px; /* Tamaño inicial */
-  z-index: 2; /* Asegura que el logo esté sobre el círculo */
-  position: absolute; /* Posición absoluta para control preciso */
-  top: 50%; /* Inicio en el centro vertical */
-  left: 50%; /* Centro horizontal */
-  transform: translate(-50%, -50%); /* Centrar exactamente en el medio */
-  transition: width 2s ease, top 2s ease, transform 2s ease; /* Suavizar transiciones de tamaño y posición */
-}
-.logo_placeholder{
-  width: 300px; /* Tamaño inicial */
-  z-index: 2; /* Asegura que el logo esté sobre el círculo */
-  position: relative; /* Posición absoluta para control preciso */
-  top: 50%; /* Inicio en el centro vertical */
-  left: 50%; /* Centro horizontal */
-  transform: translate(-50%, -50%); /* Centrar exactamente en el medio */
-  transition: width 2s ease, top 2s ease, transform 2s ease; /* Suavizar transiciones de tamaño y posición */
-}
+
+
 .texto{
   width: 100%;
 }
@@ -250,4 +229,68 @@ body, html {
   text-align: center;
   position: relative;
   scroll-snap-align: start;
+}
+#miVideo {
+  width: 100%;    /* Ajusta al ancho del contenedor */
+  height: 800px;   /* Ajusta automáticamente la altura para mantener la proporción */
+  object-fit: cover; /* Asegura que el video cubra el área sin perder proporciones */
+  align-self: center;
+  display: none;
+}
+#interactiveSection {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, black, white);
+  color: black;
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+}
+
+.text-animation {
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px); /* Empieza un poco hacia abajo */
+  animation: slideUpFadeIn 5s forwards; /* Ajusta el tiempo según necesites */
+  display: block;
+}
+
+@keyframes slideUpFadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+.logo-placeholder {
+  position: relative;  
+  width: 250px; 
+  height: 250px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Logo_aparecido {
+  position: absolute;  /* Posicionamiento relativo al contenedor padre */
+  top: 0;              /* Empieza en la esquina superior izquierda */
+  left: 0;             /* Empieza en la esquina superior izquierda */
+  width: 250px;        /* Tamaño inicial del logo, ajustable según necesidad */
+  height: 250px;        /* Altura automática para mantener la proporción */
+  opacity: 0;          /* Inicia invisible */
+  transition: opacity 3s ease-in-out; /* Transición suave de la opacidad */
+}
+.Logo_aparecido img {
+  width: 100%;         /* Ajuste para llenar el div */
+  height: auto;        /* Mantiene la proporción de la imagen */
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.Logo_aparecido {
+  /* Preparar pero no iniciar la animación aquí */
+  opacity: 0;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
