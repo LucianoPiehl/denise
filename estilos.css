@@ -294,3 +294,61 @@ body, html {
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
+#interactiveSection {
+  position: relative;
+  height: 900px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  position: absolute;
+  width: 100%;
+  top: 50%; /* Centrado pero no visible inicialmente */
+  transform: translateY(-50%);
+  opacity: 0; /* Completamente transparente inicialmente */
+  font-size: 106px; /* Tamaño inicial grande */
+  transition: top 1s ease-in-out, opacity 1s ease-in-out, font-size 1s ease-in-out;
+}
+
+.message.active {
+  opacity: 1; /* Hacerlo completamente visible cuando está activo */
+}
+
+.message.up {
+  top: -100%; /* Mover hacia arriba cuando se activa .up */
+  opacity: 0; /* Desaparecer mientras se mueve hacia arriba */
+  font-size: 140px; /* Aumentar el tamaño al moverse hacia arriba */
+}
+
+.message_ultimo{
+  position: absolute;
+  width: 100%;
+  top: 50%; /* Comienza centrado pero invisible */
+  transform: translateY(-50%);
+  opacity: 0; /* Inicia completamente transparente */
+  font-size: 106px; /* Tamaño inicial de la fuente */
+  transition: top 1s ease-in-out, opacity 1s ease-in-out, font-size 1s ease-in-out; /* Suavizar todas las transiciones */
+}
+
+.arrow-button {
+  position: absolute;
+  bottom: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #333;
+  padding: 10px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.arrow-button:hover {
+  transform: scale(1.2);
+  color: #666;
+}
+
